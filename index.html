@@ -11,7 +11,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
 </head>
 
 <body>
@@ -45,7 +44,6 @@
             </main>
         </div>
         <div class="contaier right">
-
         </div>
         <img class="robot" src="./images/robot.png" alt="robot">
     </div>
@@ -53,31 +51,14 @@
     <script>
         function onSubmit() {
             var email = document.getElementById("email").value;
-            // if (email) {
-            //     Email.send({
-            //             Host: "smtp.gmail.com",
-            //             Username: "testemaila71@gmail.com",
-            //             Password: "testemail@123",
-            //             To: email,
-            //             From: "info@aisys.global",
-            //             Subject: "Website Inquiry",
-            //             Body: `Hi AiSys, <br>There is a new customer enquired about the product.<br>Email ID : ${email}<br>Thanks,<br>AiSys Robomail`,
-            //         })
-            //         .then(function (message) {
-            //             alert("mail sent successfully")
-            //         });
-            // } else {
-            //     alert("Please enter your email!")
-            // }
             if (email) {
                 window.open(
-                    `mailto:hello@nextologic.com?subject=Website Inquiry&body=Hi AiSys, %0D%0AThere is a new customer enquired about the product.%0D%0AEmail ID : ${email}%0D%0AThanks,%0D%0AAiSys Robomail`
+                    `mailto:hello@nextologic.com?subject=Website Inquiry&body=Hi AiSys, %0D%0AThere is a new customer enquired about the product.%0D%0AEmail ID : ${email}`
                 );
                 alert("Thank you for submitting, our Team will get in touch with you shortly")
             } else {
                 alert("Please enter your email!")
             }
-
         }
     </script>
 </body>
