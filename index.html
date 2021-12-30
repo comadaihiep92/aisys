@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
 </head>
 
 <body>
@@ -25,9 +26,9 @@
             <main>
                 <p class="sologan">We are <br>
                     Launching Soon</p>
-                <form class="form">
+                <form class="form" onsubmit="onSubmit()">
                     <div>
-                        <input type="email" placeholder="enter your mail">
+                        <input id="email" type="email" placeholder="enter your mail">
                         <button type="submit">Send</button>
                     </div>
                 </form>
@@ -48,6 +49,30 @@
         </div>
         <img class="robot" src="./images/robot.png" alt="robot">
     </div>
+
+    <script>
+        function onSubmit() {
+            var email = document.getElementById("email").value;
+            if (email) {
+                Email.send({
+                        Host: "smtp.gmail.com",
+                        Username: "testemaila71@gmail.com",
+                        Password: "testemail@123",
+                        To: email,
+                        From: "testemaila71@gmail.com",
+                        Subject: "Website Inquiry",
+                        Body: `Hi AiSys, <br>There is a new customer enquired about the product.<br>Email ID : ${email}<br>Thanks,<br>AiSys Robomail`,
+                    })
+                    .then(function (message) {
+                        alert("mail sent successfully")
+                    });
+            } else {
+                alert("Please enter your email!")
+            }
+
+        }
+    </script>
 </body>
+
 
 </html>
