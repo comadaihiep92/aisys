@@ -53,19 +53,26 @@
     <script>
         function onSubmit() {
             var email = document.getElementById("email").value;
+            // if (email) {
+            //     Email.send({
+            //             Host: "smtp.gmail.com",
+            //             Username: "testemaila71@gmail.com",
+            //             Password: "testemail@123",
+            //             To: email,
+            //             From: "info@aisys.global",
+            //             Subject: "Website Inquiry",
+            //             Body: `Hi AiSys, <br>There is a new customer enquired about the product.<br>Email ID : ${email}<br>Thanks,<br>AiSys Robomail`,
+            //         })
+            //         .then(function (message) {
+            //             alert("mail sent successfully")
+            //         });
+            // } else {
+            //     alert("Please enter your email!")
+            // }
             if (email) {
-                Email.send({
-                        Host: "smtp.gmail.com",
-                        Username: "testemaila71@gmail.com",
-                        Password: "testemail@123",
-                        To: email,
-                        From: "testemaila71@gmail.com",
-                        Subject: "Website Inquiry",
-                        Body: `Hi AiSys, <br>There is a new customer enquired about the product.<br>Email ID : ${email}<br>Thanks,<br>AiSys Robomail`,
-                    })
-                    .then(function (message) {
-                        alert("mail sent successfully")
-                    });
+                window.open(
+                    `mailto:hello@nextologic.com?subject=Website Inquiry&body=Hi AiSys, %0D%0AThere is a new customer enquired about the product.%0D%0AEmail ID : ${email}%0D%0AThanks,%0D%0AAiSys Robomail`
+                );
             } else {
                 alert("Please enter your email!")
             }
