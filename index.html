@@ -26,7 +26,7 @@
             <main>
                 <p class="sologan">We are <br>
                     Launching Soon</p>
-                <form class="form" onsubmit="onSubmit()">
+                <form class="form" onsubmit="event.preventDefault();onSubmit()">
                     <div>
                         <input id="email" type="email" placeholder="enter your mail">
                         <button type="submit">Send</button>
